@@ -1,0 +1,6 @@
+{
+  "name": "ShareAssist - منصة الدعم الفني ومشاركة الشاشة",
+  "description": "تطبيق متكامل لإنشاء روابط وجلسات دعم فني قانونية مع مشاركة الشاشة بموافقة صريحة عبر تقنية WebRTC والتحكم التوجيهي.",
+  "requestFramePermissions": ["display-capture", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
