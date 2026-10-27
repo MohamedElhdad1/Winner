@@ -6,7 +6,8 @@ import {signalingPlugin} from './src/server/signalingPlugin.ts';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss(), signalingPlugin()],
+    base: process.env.GITHUB_PAGES === 'true' ? '/Winner/' : '/',
+    plugins: [react(), tailwindcss(), ...(process.env.GITHUB_PAGES === 'true' ? [] : [signalingPlugin()])],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

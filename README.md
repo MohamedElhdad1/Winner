@@ -1,20 +1,33 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# ShareAssist 7dad — واجهة الدعم الفني ومشاركة الشاشة
 
-# Run and deploy your AI Studio app
+واجهة React + Vite عربية لمشاركة الشاشة بموافقة صريحة.
 
-This contains everything you need to run your app locally.
+## تشغيل محلي
 
-View your app in AI Studio: https://ai.studio/apps/b1f1fe06-4b0b-41d3-b58a-d3c2454b859f
+يتطلب Node.js 22 أو أحدث.
 
-## Run Locally
+```bash
+npm install
+npm run dev
+```
 
-**Prerequisites:**  Node.js
+الوضع المحلي يشغّل Vite مع signaling plugin المضمّن لأغراض التطوير. بيانات الجلسات الموجودة في ذاكرة العملية مؤقتة وليست مناسبة للإنتاج.
 
+## النشر على GitHub Pages
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. ارفع جميع ملفات هذا المشروع إلى جذر المستودع `MohamedElhdad1/Winner` على الفرع `main`.
+2. من `Settings → Pages` اختر `GitHub Actions` كمصدر النشر.
+3. من تبويب `Actions` راقب سير العمل `Deploy ShareAssist to GitHub Pages`.
+4. بعد نجاحه سيظهر رابط الموقع في إعدادات Pages، عادةً `https://mohamedelhdad1.github.io/Winner/`.
+
+## حدود مهمة
+
+GitHub Pages يستضيف ملفات الواجهة الثابتة فقط ولا يشغّل خادم API/SSE. لذلك هذا النشر **واجهة تجريبية فقط**؛ جلسات الاتصال الحية بين جهازين لن تعمل على GitHub Pages وحده. لا تستخدمه لتقديم جلسة حقيقية قبل إعداد خادم signaling مستقل وآمن.
+
+مشاركة الشاشة تعتمد على اختيار المستخدم من نافذة المتصفح الرسمية ويمكنه إيقافها في أي وقت. مشاركة الميكروفون/الصوت تتطلب إذنًا منفصلًا واضحًا. لا تستخدم الصفحة للوصول الخفي أو المراقبة دون موافقة.
+
+## الأمان
+
+- لا تضع مفاتيح API أو كلمات مرور حقيقية داخل المستودع العام.
+- لا تعتمد على PIN وحده كوسيلة مصادقة إدارية.
+- خادم التطوير المضمّن لا يملك تخزينًا دائمًا أو مصادقة إنتاجية.
